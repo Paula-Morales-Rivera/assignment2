@@ -1,0 +1,181 @@
+Name: Paula Morales Rivera  FSUID: pm23e Assignment #3: Git and object oriented programming warm up
+GitHub Link: https://github.com/Paula-Morales-Rivera/assignment2
+Date Created: 03/16/22
+
+Git Lab Tutorials: 
+Main – Introduction Sequence Date: 02/24/2025
+Remotes – Push & Pull -- Git Remote Date: 02/25/2025
+
+Visualizing Git Tutorial Date: 02/25/2025
+Rebase Tutorial     Date: 02/26/2025
+
+1. Paste the console output you saved at the end of step 3.C (2 points)
+
+paula@DESKTOP-3582GUD MINGW64 ~/OneDrive/Documents/assignment2/assignment2 (master)
+$ git push
+info: please complete authentication in your browser...
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 947 bytes | 473.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/Paula-Morales-Rivera/assignment2
+   f4975e5..60ffadd  master -> master
+
+2. How many commits have been done to the repository
+(not only by you, but by anyone) so far? Write the git command you used to get
+this information (4 points)
+
+There a total of 9 commits done to the repository. To retrieve this information
+I used the command git rev-list --count HEAD.
+
+paula@DESKTOP-3582GUD MINGW64 ~/OneDrive/Documents/assignment2/assignment2 (master)
+$ git rev-list --count HEAD
+9
+
+3. When was the README.md  file modified last? Write the git command you
+used to get this information (4 points)
+
+The file was last modified Thu Feb 27 09:13:50 2025 -0500.
+I was able to retrive this information using the command
+git log -1 --format=%cd README.md.
+
+paula@DESKTOP-3582GUD MINGW64 ~/OneDrive/Documents/assignment2/assignment2 (master)
+$ git log -1 --format=%cd README.md
+Thu Feb 27 09:13:50 2025 -0500
+
+4. Mention two reasons why branches are used in a Git repository (4 points)
+
+Branches are mainly used in repositories for two reasons:
+They allow developers to experiment with ideas, develop features
+and fix bugs in an isolated container.
+Branches also allow developers to work on more than one feature simultaneously
+or in parallel.
+
+5. What is the difference between git log and git status? (4 points)
+Git log displays the commit history of a repository. It will list the changes
+made and the author of the changes. 
+
+Git status displays the state of the working repository and the staging area.
+It will list the changes that have been staged and those that are not. Also,
+it will list the files that are not currently tracked by Git.
+
+They differ in that git log displays the commit history and git status displays
+the state of the repository. 
+
+6. What command would you use to see the commits where “Vehicle.h” 
+was one of the committed files? (4 points)
+The command to see the commits for the “Vehicle.h” file was:
+git log --stat --name-only Vehicle.h.
+
+paula@DESKTOP-3582GUD MINGW64 ~/OneDrive/Documents/assignment2/assignment2 (master)
+$ git log --stat --name-only Vehicle.h
+commit 03106e92a1e36708334c69dd071088c6d0937b1d
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 11 16:58:59 2019 -0400
+
+    -> Declared the trivial destructors for all classes
+    -> Fully formatted toString methods for all classes
+    -> Added test cases in the main method for testing the implementations
+    -> Added validation on value for engine sizes in the  Car class
+
+Vehicle.h
+
+commit f9cd890b3f89fbe5920a1fdf7da34ee915ba27b9
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 18:42:39 2019 -0400
+
+    -> Partial implementation of PoweredVehicle and Car
+    -> Definition of virtual functions
+
+Vehicle.h
+
+commit f9c24b027e6275ff6a1911241014c44971b4e8d0
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 18:04:36 2019 -0400
+
+
+7. What command would you use to see the commits whose commit message contains
+the word “file”? (4 points) 
+The command to see the commit messages that contain the word file is:
+git log --grep="file"
+
+paula@DESKTOP-3582GUD MINGW64 ~/OneDrive/Documents/assignment2/assignment2 (master)
+$ git log --grep="file"
+commit 5cc67fff8c94d7f36f22dc2239fdcf5e2ad67660 (HEAD -> master, origin/master, origin/HEAD)
+Author: Paula Morales <paulamorales6729@gmail.com>
+Date:   Thu Feb 27 09:43:41 2025 -0500
+
+    Create answers file in docs
+
+commit 60ffaddb3a31077212a16c4e25bfb9974d801372
+Author: Paula Morales <paulamorales6729@gmail.com>
+Date:   Thu Feb 27 09:32:11 2025 -0500
+
+    Create docs folder
+
+    This folder contains files to track status changes.
+
+commit bbb114c3bc8f8e93bb4313423b7ce4ce329a79e7
+Author: Paula Morales <paulamorales6729@gmail.com>
+Date:   Thu Feb 27 09:13:50 2025 -0500
+
+    Update README information
+
+    The information file has been updated to describe the owner of the repository.
+
+    Repository owner information added to README.md
+
+
+8. In the context of object-oriented programming (6 points) 
+(I) What is inheritance?
+In OOP, inheritance is a way to inherit the attributes, methods and functionality
+of a class. An example is the vehicle parent class which may have
+the functionality to move and a child class like a car would inherit the
+functionality to move from the parent class. However, the car class
+may have additional attributes such as number of wheels defined.
+
+(II) What is polymorphism? 
+In OOP, polymorphism is a way to redefine the methods and functionality inherited
+from a parent class. An example is the car class may have a speed method
+that allows a car to reach a certain speed however a child car class such as a
+Suzuki Alto can reach 70km/h so we can redefine it to include that speed.
+
+(III) What is encapsulation?
+In OOP, encapsulation is a way to combine attributes and methods into a single unit
+or a class. It allows us to protect the data by limiting direct access and rather
+use methods like getters and setters to interact with the data.
+
+9.  What is the main difference between the “Dictator and Lieutenants”
+workflow and the “Integration manager” workflow? (5 points)
+
+In the Dictator and Lieutenants workflow there is one blessed repository 
+that only the dictator can push changes to it while everyone else can only  
+pull changes from it. Here, developers are allowed to push their code to 
+lieutenant repositories however they are limited by the lieutenants. 
+Then the dictator merges the changes made to the 
+lieutenant repositories and push the changes to the blessed repository.
+
+In the Integration manager workflow developers can pull from the blessed repository
+and push changes and their work to publicly available repositories. 
+Integration of the repositories is done by the integration manager and
+pushes the final changes.
+
+The main difference between them is that in the Dictator and Lieutenants workflow
+the lieutenant also provide additional limits before the dictator pushes the 
+final changes, while in the Integration manager the changes are more direct
+since they go from public repositories to the manager and then the blessed repository.
+
+10. How would a team of 100 developers benefit from following the “Dictator 
+and Lieutenants” workflow instead of the “Centralized” workflow? (5 points)
+
+Using a Centralized workflow with a team of 100 developers would create too
+many conflicts as there is no regulation of the changes made to the 
+single shared repository.
+
+With a team of 100 developers, it is more suitable to use the Dictator and
+Lieutenants workflow since there is more control over the changes developers
+can make to the central repository. Here, developers can do their work but
+without directly interferring with the central repository.  
